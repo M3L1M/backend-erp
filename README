@@ -53,6 +53,7 @@ GET:http://localhost:8080/api/produto-servico?page={page}&size={size}&tipo={tipo
 ============================================================================
 
 Para adicionar um pedido você deve seguir o caminho do JSON abaixo:
+	OBS: para passar um produto em situação fechada, o desconto deve ser 0
 POST:http://localhost:8080/api/produto-servico
 
 SITUAÇÃO:ABERTO,FECHADO
