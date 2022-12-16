@@ -1,4 +1,4 @@
-A versão do POSTGRESQL é a 9.4
+A versão do POSTGRESQL é a 9.4 e o script esta com o nome de script.sql
 
 A api esta na porta 8080
 localhost:8080/api
