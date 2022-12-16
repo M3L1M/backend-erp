@@ -1,0 +1,106 @@
+A api esta na porta 8080
+localhost:8080/api
+
+Para adicionar um produto/serviço você deve seguir o caminho do JSON abaixo:
+POST:http://localhost:8080/api/produto-servico
+
+TIPO: PRODUTO,SERVICO
+STATUS: ATIVO,INATIVO
+
+{
+	"descricao":"",
+	"tipo":"",
+	"preco":0,
+	"quantidade":0,
+	"status":""
+}
+
+----------------
+
+Para obter um produto/serviço, você deve colocar o UUID gerado no local indicado {UUID}:
+GET:http://localhost:8080/api/produto-servico/{UUID}
+
+----------------
+
+Para editar um produto/serviço, você ira colocar o UUID gerado no local indicado {UUID} e seguira o caminho do JSON abaixo
+PUT:http://localhost:8080/api/produto-servico/{UUID}
+
+TIPO: PRODUTO,SERVICO
+STATUS: ATIVO,INATIVO
+
+{
+	"descricao":"",
+	"tipo":"",
+	"preco":0,
+	"quantidade":0,
+	"status":""
+}
+
+----------------
+
+Para deletar um produto que não esta associado a um pedido, você deve colocar o UUID gerado no local indicado {UUID}:
+DELETE:http://localhost:8080/api/produto-servico/{UUID}
+
+----------------
+
+Para listar os itens, você deve colocar o numero de pagina(page,começando com 0), a quantidade de produtos que aparecera na pagina{size, começando com 1}
+e podendo tambem filtrar pelo tipo{tipo, {PRODUTO,SERVICO}}
+
+GET:http://localhost:8080/api/produto-servico?page={page}&size={size}&tipo={tipo}
+
+============================================================================
+
+Para adicionar um pedido você deve seguir o caminho do JSON abaixo:
+POST:http://localhost:8080/api/produto-servico
+
+SITUAÇÃO:ABERTO,FECHADO
+{
+	"desconto":0,
+	"situacao":"",
+	"itensPedido": [
+		{
+			"produtoServico":"{UUID}",
+			"quantidade":1
+		}
+		
+	]
+}
+
+----------------
+
+Para obter um pedido você deve colocar o UUID gerado no local indicado {UUID}:
+GET:localhost:8080/api/pedido/{UUID}
+
+----------------
+
+Para editar um pedido, você ira colocar o UUID gerado no local indicado {UUID} e seguira o caminho do JSON abaixo
+
+PUT:http://localhost:8080/api/pedido/{UUID}
+
+SITUAÇÃO:ABERTO,FECHADO
+{
+	"desconto":0,
+	"situacao":"",
+	"itensPedido": [
+		{
+			"produtoServico":"{UUID}",
+			"quantidade":1
+		}
+		
+	]
+}
+
+----------------
+
+Para deletar um pedido você deve colocar o UUID gerado no local indicado {UUID}:
+DELETE:http://localhost:8080/api/pedido/{UUID}
+
+----------------
+
+Para listar todos os pedidos você deve colocar o numero de pagina(page,começando com 0), a quantidade de pedidos que aparecera na pagina{size, começando com 1},
+e podendo tambem filtrar pela situação{situação, {ABERTO,FECHADO}}
+
+OBS: Não consegui fazer este endpoint pois estava dando um erro no qual eu não consegui arrumar.
+	Error: Transferred a partial file
+
+GET:http://localhost:8080/api/pedido?page={page}&size={size}&situacao={situacao}
