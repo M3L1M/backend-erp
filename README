@@ -1,3 +1,5 @@
+A versão do POSTGRESQL é a 9.4
+
 A api esta na porta 8080
 localhost:8080/api
 
